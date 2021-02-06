@@ -80,7 +80,7 @@ module RequireReloader
     end
 
     def to_prepare(&block)
-      if Rails::VERSION::MAJOR == 5
+      if Rails::VERSION::MAJOR >= 5
         ActiveSupport::Reloader.to_prepare(&block)
       else
         ActionDispatch::Callbacks.to_prepare(&block)
